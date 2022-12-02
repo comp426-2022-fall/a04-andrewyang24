@@ -25,3 +25,9 @@ app.get('/app/roll/', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).send(roll(6, 2, 1));
 });
+
+//roll random dice
+app.get('/app/roll/', (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).send(roll(parseInt(req.query.sides), parseInt(req.query.dice), parseInt(req.query.rolls)));
+})
