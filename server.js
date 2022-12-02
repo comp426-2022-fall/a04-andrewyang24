@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 import { roll } from './lib/roll.js';
 import express from 'express';
 import minimist from 'minimist';
@@ -21,9 +22,6 @@ app.get('*', (req, res) => {
 
 //roll default dice
 app.get('/app/roll/', (req, res) => {
-    const sides = 6;
-    const dice = 2;
-    const rolls = 1;
     res.setHeader('Content-Type', 'application/json');
-    res.status(200).send(roll(sides, dice, rolls));
+    res.status(200).send(roll(6, 2, 1));
 });
