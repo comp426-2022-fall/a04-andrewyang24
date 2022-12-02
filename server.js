@@ -35,5 +35,17 @@ app.post('/app/roll/', (req, res) => {
 //roll dice with sides
 app.get('/app/roll/:sides/', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    res.status(200).send(roll(parseInt(req.params.sides), 2, 1)).end();
+    res.status(200).send(roll(parseInt(req.params.sides), 2, 1));
+})
+
+//roll dice with sides and dice
+app.get('/app/roll/:sides/:dice/', (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).send(roll(parseInt(req.params.sides), parseInt(req.params.dice), 1));
+})
+
+//roll dice with all params
+app.get('/app/roll/:sides/:dice/:rolls/', (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).send(roll(parseInt(req.params.sides), parseInt(req.params.dice), parseInt(req.params.rolls)));
 })
