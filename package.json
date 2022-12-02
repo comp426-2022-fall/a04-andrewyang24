@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Repo for assignment a04. Stand up a web API using Express",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
