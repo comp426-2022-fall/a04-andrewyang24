@@ -14,7 +14,12 @@ app.get('/app/', (req, res) => {
     res.status(200).send('200 OK');
   });
 
+//call a non-existing endpoint
+app.get('*', (req, res) => {
+    res.status(404).send('404 NOT FOUND');
+});
 
+//roll default dice
 app.get('/app/roll/', (req, res) => {
     const sides = 6;
     const dice = 2;
