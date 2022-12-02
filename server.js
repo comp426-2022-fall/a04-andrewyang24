@@ -49,3 +49,6 @@ app.get('/app/roll/:sides/:dice/:rolls/', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).send(roll(parseInt(req.params.sides), parseInt(req.params.dice), parseInt(req.params.rolls)));
 })
+
+//setup server
+app.listen(port);
