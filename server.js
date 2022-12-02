@@ -31,3 +31,9 @@ app.post('/app/roll/', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).send(roll(parseInt(req.query.sides), parseInt(req.query.dice), parseInt(req.query.rolls)));
 })
+
+//roll dice with sides
+app.get('/app/roll/:sides/', (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).send(roll(parseInt(req.params.sides), 2, 1)).end();
+})
