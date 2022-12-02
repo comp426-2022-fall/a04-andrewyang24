@@ -13,3 +13,12 @@ app.use(express.urlencoded({extended: true}));
 app.get('/app/', (req, res) => {
     res.status(200).send('200 OK');
   });
+
+
+app.get('/app/roll/', (req, res) => {
+    const sides = 6;
+    const dice = 2;
+    const rolls = 1;
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).send(roll(sides, dice, rolls));
+});
