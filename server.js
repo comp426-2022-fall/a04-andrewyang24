@@ -15,11 +15,6 @@ app.get('/app/', (req, res) => {
     res.status(200).send('200 OK');
   });
 
-//call a non-existing endpoint
-app.get('*', (req, res) => {
-    res.status(404).send('404 NOT FOUND');
-});
-
 //roll default dice
 app.get('/app/roll/', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
@@ -49,6 +44,11 @@ app.get('/app/roll/:sides/:dice/:rolls/', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).send(roll(parseInt(req.params.sides), parseInt(req.params.dice), parseInt(req.params.rolls)));
 })
+
+//call a non-existing endpoint
+app.get('*', (req, res) => {
+    res.status(404).send('404 NOT FOUND');
+});
 
 //setup server
 app.listen(port);
