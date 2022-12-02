@@ -22,15 +22,9 @@ app.get('/app/roll/', (req, res) => {
 });
 
 //roll random dice
-app.get('/app/roll/', (req, res) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).send(roll(parseInt(req.query.sides), parseInt(req.query.dice), parseInt(req.query.rolls)));
-})
-
-//roll random dice
 app.post('/app/roll/', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    res.status(200).send(roll(parseInt(req.query.sides), parseInt(req.query.dice), parseInt(req.query.rolls)));
+    res.status(200).send(roll(parseInt(req.body.sides), parseInt(req.body.dice), parseInt(req.body.rolls))).end();
 })
 
 //roll dice with sides
